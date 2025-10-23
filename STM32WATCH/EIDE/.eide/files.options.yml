@@ -1,0 +1,22 @@
+##########################################################################################
+#                        Append Compiler Options For Source Files
+##########################################################################################
+
+# syntax:
+#   <your pattern>: <compiler options>
+# For get pattern syntax, please refer to: https://www.npmjs.com/package/micromatch
+#
+# examples:
+#   'main.cpp':           --cpp11 -Og ...
+#   'src/*.c':            -gnu -O2 ...
+#   'src/lib/**/*.cpp':   --cpp11 -Os ...
+#   '!Application/*.c':   -O0
+#   '**/*.c':             -O2 -gnu ...
+
+version: "2.1"
+options:
+    STM32WATCH:
+        files: {}
+        virtualPathFiles:
+            <virtual_root>/Application/User/Core/i2c.c: ""
+            <virtual_root>/Drivers/STM32F1xx_HAL_Driver/stm32f1xx_hal_i2c.c: ""
