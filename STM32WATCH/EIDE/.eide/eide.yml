@@ -3,7 +3,8 @@ name: STM32WATCH
 type: ARM
 deviceName: null
 packDir: null
-srcDirs: []
+srcDirs:
+  - ../Core/Inc
 virtualFolder:
   name: <virtual_root>
   files: []
