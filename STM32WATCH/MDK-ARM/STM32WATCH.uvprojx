@@ -206,7 +206,7 @@
             <Ro2Chk>0</Ro2Chk>
             <Ro3Chk>0</Ro3Chk>
             <Ir1Chk>1</Ir1Chk>
-            <Ir2Chk>1</Ir2Chk>
+            <Ir2Chk>0</Ir2Chk>
             <Ra1Chk>0</Ra1Chk>
             <Ra2Chk>0</Ra2Chk>
             <Ra3Chk>0</Ra3Chk>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\Drivers\DshanMCU-103</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -673,6 +673,61 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>DshanMCU-103</GroupName>
+          <Files>
+            <File>
+              <FileName>ascii_font.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\DshanMCU-103\ascii_font.c</FilePath>
+            </File>
+            <File>
+              <FileName>ascii_font.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Drivers\DshanMCU-103\ascii_font.h</FilePath>
+            </File>
+            <File>
+              <FileName>driver_lcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\DshanMCU-103\driver_lcd.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_lcd.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Drivers\DshanMCU-103\driver_lcd.h</FilePath>
+            </File>
+            <File>
+              <FileName>driver_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\DshanMCU-103\driver_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Drivers\DshanMCU-103\driver_led.h</FilePath>
+            </File>
+            <File>
+              <FileName>driver_oled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\DshanMCU-103\driver_oled.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_oled.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Drivers\DshanMCU-103\driver_oled.h</FilePath>
+            </File>
+            <File>
+              <FileName>driver_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\DshanMCU-103\driver_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Drivers\DshanMCU-103\driver_timer.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -691,5 +746,14 @@
     </components>
     <files/>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>STM32WATCH</LayName>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>
