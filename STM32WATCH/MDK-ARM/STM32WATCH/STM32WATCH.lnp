@@ -32,11 +32,9 @@
 "stm32watch\cmsis_os2.o"
 "stm32watch\heap_4.o"
 "stm32watch\port.o"
-"stm32watch\ascii_font.o"
-"stm32watch\driver_lcd.o"
-"stm32watch\driver_led.o"
-"stm32watch\driver_oled.o"
-"stm32watch\driver_timer.o"
+"stm32watch\bmp280.o"
+"stm32watch\oled.o"
+"stm32watch\oledfont.o"
 --strict --scatter "STM32WATCH\STM32WATCH.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
