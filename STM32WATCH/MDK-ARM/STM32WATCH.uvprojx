@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\Drivers\Wayson_Drivers</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\Drivers\Wayson_Drivers;..\Drivers\Wayson_Drivers\MyTask</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -689,6 +689,16 @@
               <FileName>oledfont.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\Wayson_Drivers\oledfont.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>MyTask</GroupName>
+          <Files>
+            <File>
+              <FileName>ShowBMP280.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Wayson_Drivers\MyTask\ShowBMP280.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -35,6 +35,7 @@
 "stm32watch\bmp280.o"
 "stm32watch\oled.o"
 "stm32watch\oledfont.o"
+"stm32watch\showbmp280.o"
 --strict --scatter "STM32WATCH\STM32WATCH.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

@@ -49,8 +49,9 @@
  
 #define BMP280_RESET_VALUE     0xB6
  
- 
- 
+
+
+
 void bmp280_init_default_params(bmp280_params_t *params) {
     params->mode = BMP280_MODE_NORMAL;
     params->filter = BMP280_FILTER_OFF;
@@ -350,3 +351,4 @@ bool bmp280_read_float(BMP280_HandleTypedef *dev, float *temperature, float *pre
  
     return false;
 }
+
