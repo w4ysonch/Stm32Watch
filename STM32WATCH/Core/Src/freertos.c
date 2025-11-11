@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "ShowBMP280.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,6 +45,8 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
+/* some task handle*/
+TaskHandle_t xShowBMP280TaskHandle = NULL;
 
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
@@ -96,6 +98,8 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+  xTaskCreate(ShowBMP280Task, "ShowBMP280Task", 128, NULL, osPriorityNormal, &xShowBMP280TaskHandle);
+
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
