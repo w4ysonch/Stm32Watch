@@ -5,7 +5,7 @@ deviceName: null
 packDir: null
 srcDirs:
   - ../Core/Inc
-  - ../Drivers/DshanMCU-103
+  - ../Drivers/Wayson_Drivers
 virtualFolder:
   name: <virtual_root>
   files: []
