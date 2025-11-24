@@ -3,9 +3,7 @@ name: STM32WATCH
 type: ARM
 deviceName: null
 packDir: null
-srcDirs:
-  - ../Core/Inc
-  - ../Drivers/Wayson_Drivers
+srcDirs: []
 virtualFolder:
   name: <virtual_root>
   files: []
@@ -70,13 +68,66 @@ virtualFolder:
             - path: ../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
             - path: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/port.c
           folders: []
+    - name: MyDrivers
+      files:
+        - path: ../MyDrivers/bmp280.c
+      folders: []
+    - name: MyTasks
+      files:
+        - path: ../MyTasks/ShowBMP280.c
+        - path: ../MyTasks/Data.c
+      folders: []
+    - name: u8g2
+      files:
+        - path: ../u8g2/mui.c
+        - path: ../u8g2/mui_u8g2.c
+        - path: ../u8g2/u8g2_bitmap.c
+        - path: ../u8g2/u8g2_box.c
+        - path: ../u8g2/u8g2_buffer.c
+        - path: ../u8g2/u8g2_button.c
+        - path: ../u8g2/u8g2_circle.c
+        - path: ../u8g2/u8g2_cleardisplay.c
+        - path: ../u8g2/u8g2_d_memory.c
+        - path: ../u8g2/u8g2_d_setup.c
+        - path: ../u8g2/u8g2_font.c
+        - path: ../u8g2/u8g2_fonts.c
+        - path: ../u8g2/u8g2_hvline.c
+        - path: ../u8g2/u8g2_input_value.c
+        - path: ../u8g2/u8g2_intersection.c
+        - path: ../u8g2/u8g2_kerning.c
+        - path: ../u8g2/u8g2_line.c
+        - path: ../u8g2/u8g2_ll_hvline.c
+        - path: ../u8g2/u8g2_message.c
+        - path: ../u8g2/u8g2_polygon.c
+        - path: ../u8g2/u8g2_selection_list.c
+        - path: ../u8g2/u8g2_setup.c
+        - path: ../u8g2/u8log.c
+        - path: ../u8g2/u8log_u8g2.c
+        - path: ../u8g2/u8log_u8x8.c
+        - path: ../u8g2/u8x8_8x8.c
+        - path: ../u8g2/u8x8_byte.c
+        - path: ../u8g2/u8x8_cad.c
+        - path: ../u8g2/u8x8_capture.c
+        - path: ../u8g2/u8x8_d_ssd1306_128x64_noname.c
+        - path: ../u8g2/u8x8_debounce.c
+        - path: ../u8g2/u8x8_display.c
+        - path: ../u8g2/u8x8_fonts.c
+        - path: ../u8g2/u8x8_gpio.c
+        - path: ../u8g2/u8x8_input_value.c
+        - path: ../u8g2/u8x8_message.c
+        - path: ../u8g2/u8x8_selection_list.c
+        - path: ../u8g2/u8x8_setup.c
+        - path: ../u8g2/u8x8_string.c
+        - path: ../u8g2/u8x8_u8toa.c
+        - path: ../u8g2/u8x8_u16toa.c
+      folders: []
     - name: ::CMSIS
       files: []
       folders: []
 dependenceList: []
 outDir: build
 miscInfo:
-  uid: 1bc5c2b1c23741d3b2babbe1bb4e476e
+  uid: 77644c22454bc992ff3020349a3409ed
 targets:
   STM32WATCH:
     cppPreprocessAttrs:
@@ -92,6 +143,11 @@ targets:
         - ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3
         - ../Drivers/CMSIS/Device/ST/STM32F1xx/Include
         - ../Drivers/CMSIS/Include
+        - ../Drivers/Wayson_Drivers
+        - ../Drivers/Wayson_Drivers/MyTask
+        - ../MyDrivers
+        - ../MyTasks
+        - ../u8g2
         - .cmsis/include
         - ../MDK-ARM/RTE/_STM32WATCH
       libList: []
@@ -192,7 +248,7 @@ targets:
                 startAddr: "0x8000000"
               tag: IROM
             - id: 2
-              isChecked: true
+              isChecked: false
               isStartup: false
               mem:
                 size: "0x0"

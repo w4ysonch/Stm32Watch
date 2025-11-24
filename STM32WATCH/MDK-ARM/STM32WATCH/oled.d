@@ -1,5 +1,5 @@
-stm32watch\oled.o: ..\Drivers\Wayson_Drivers\oled.c
-stm32watch\oled.o: ..\Drivers\Wayson_Drivers\oled.h
+stm32watch\oled.o: ..\MyDrivers\oled.c
+stm32watch\oled.o: ..\MyDrivers\oled.h
 stm32watch\oled.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 stm32watch\oled.o: ../Core/Inc/stm32f1xx_hal_conf.h
 stm32watch\oled.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
@@ -28,4 +28,4 @@ stm32watch\oled.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 stm32watch\oled.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 stm32watch\oled.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 stm32watch\oled.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
-stm32watch\oled.o: ..\Drivers\Wayson_Drivers\oledfont.h
+stm32watch\oled.o: ..\MyDrivers\oledfont.h

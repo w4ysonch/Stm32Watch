@@ -1,5 +1,5 @@
-stm32watch\bmp280.o: ..\Drivers\Wayson_Drivers\bmp280.c
-stm32watch\bmp280.o: ..\Drivers\Wayson_Drivers\bmp280.h
+stm32watch\bmp280.o: ..\MyDrivers\bmp280.c
+stm32watch\bmp280.o: ..\MyDrivers\bmp280.h
 stm32watch\bmp280.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 stm32watch\bmp280.o: ../Core/Inc/stm32f1xx_hal_conf.h
 stm32watch\bmp280.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h

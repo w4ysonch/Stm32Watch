@@ -1,4 +1,4 @@
-stm32watch\showbmp280.o: ..\Drivers\Wayson_Drivers\MyTask\ShowBMP280.c
+stm32watch\showbmp280.o: ..\MyTasks\ShowBMP280.c
 stm32watch\showbmp280.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 stm32watch\showbmp280.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 stm32watch\showbmp280.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -43,9 +43,13 @@ stm32watch\showbmp280.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/even
 stm32watch\showbmp280.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 stm32watch\showbmp280.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 stm32watch\showbmp280.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-stm32watch\showbmp280.o: ..\Drivers\Wayson_Drivers\MyTask\ShowBMP280.h
-stm32watch\showbmp280.o: ..\Drivers\Wayson_Drivers\bmp280.h
+stm32watch\showbmp280.o: ..\MyTasks\ShowBMP280.h
+stm32watch\showbmp280.o: ..\MyDrivers\bmp280.h
 stm32watch\showbmp280.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 stm32watch\showbmp280.o: ../Core/Inc/i2c.h
-stm32watch\showbmp280.o: ..\Drivers\Wayson_Drivers\oled.h
+stm32watch\showbmp280.o: ..\u8g2\u8g2.h
+stm32watch\showbmp280.o: ..\u8g2\u8x8.h
+stm32watch\showbmp280.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+stm32watch\showbmp280.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+stm32watch\showbmp280.o: ..\MyTasks\Data.h
 stm32watch\showbmp280.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
