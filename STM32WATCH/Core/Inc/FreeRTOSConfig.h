@@ -1,6 +1,6 @@
 /* USER CODE BEGIN Header */
 /*
- * FreeRTOS Kernel V10.3.1
+ * FreeRTOS Kernel V10.0.1
  * Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -51,10 +51,6 @@
   #include <stdint.h>
   extern uint32_t SystemCoreClock;
 #endif
-#ifndef CMSIS_device_header
-#define CMSIS_device_header "stm32f1xx.h"
-#endif /* CMSIS_device_header */
-
 #define configUSE_PREEMPTION                     1
 #define configSUPPORT_STATIC_ALLOCATION          1
 #define configSUPPORT_DYNAMIC_ALLOCATION         1
@@ -97,7 +93,6 @@ to exclude the API function. */
 #define INCLUDE_xTimerPendFunctionCall      1
 #define INCLUDE_xQueueGetMutexHolder        1
 #define INCLUDE_uxTaskGetStackHighWaterMark 1
-#define INCLUDE_xTaskGetCurrentTaskHandle   1
 #define INCLUDE_eTaskGetState               1
 
 /*
@@ -142,9 +137,10 @@ standard names. */
 #define vPortSVCHandler    SVC_Handler
 #define xPortPendSVHandler PendSV_Handler
 
-/* IMPORTANT: After 10.3.1 update, Systick_Handler comes from NVIC (if SYS timebase = systick), otherwise from cmsis_os2.c */
+/* IMPORTANT: This define is commented when used with STM32Cube firmware, when the timebase source is SysTick,
+              to prevent overwriting SysTick_Handler defined within STM32Cube HAL */
 
-#define USE_CUSTOM_SYSTICK_HANDLER_IMPLEMENTATION 0
+#define xPortSysTickHandler SysTick_Handler
 
 /* USER CODE BEGIN Defines */
 /* Section where parameter definitions can be added (for instance, to override default ones in FreeRTOS.h) */

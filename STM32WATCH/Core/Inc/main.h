@@ -7,7 +7,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2025 STMicroelectronics.
+  * Copyright (c) 2024 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -59,7 +59,13 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 
 /* USER CODE BEGIN Private defines */
-
+#define MAX30102_INT_Pin GPIO_PIN_4
+#define MAX30102_INT_GPIO_Port GPIOB
+#define MAX30102_INT_EXTI_IRQn EXTI4_IRQn
+#define SCL_Pin GPIO_PIN_8
+#define SCL_GPIO_Port GPIOB
+#define SDA_Pin GPIO_PIN_9
+#define SDA_GPIO_Port GPIOB
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

@@ -1,5 +1,5 @@
 version: "4.1"
-name: STM32WATCH
+name: hal_freertos_u8g2
 type: ARM
 deviceName: null
 packDir: null
@@ -24,6 +24,7 @@ virtualFolder:
                 - path: ../Core/Src/gpio.c
                 - path: ../Core/Src/freertos.c
                 - path: ../Core/Src/i2c.c
+                - path: ../Core/Src/tim.c
                 - path: ../Core/Src/stm32f1xx_it.c
                 - path: ../Core/Src/stm32f1xx_hal_msp.c
                 - path: ../Core/Src/stm32f1xx_hal_timebase_tim.c
@@ -34,8 +35,6 @@ virtualFolder:
         - name: STM32F1xx_HAL_Driver
           files:
             - path: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c
-            - path: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c
-            - path: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c
             - path: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c
             - path: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c
             - path: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c
@@ -47,6 +46,8 @@ virtualFolder:
             - path: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c
             - path: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c
             - path: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c
+            - path: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c
+            - path: ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c
           folders: []
         - name: CMSIS
           files:
@@ -68,15 +69,6 @@ virtualFolder:
             - path: ../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
             - path: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/port.c
           folders: []
-    - name: MyDrivers
-      files:
-        - path: ../MyDrivers/bmp280.c
-      folders: []
-    - name: MyTasks
-      files:
-        - path: ../MyTasks/ShowBMP280.c
-        - path: ../MyTasks/Data.c
-      folders: []
     - name: u8g2
       files:
         - path: ../u8g2/mui.c
@@ -121,35 +113,63 @@ virtualFolder:
         - path: ../u8g2/u8x8_u8toa.c
         - path: ../u8g2/u8x8_u16toa.c
       folders: []
+    - name: driver
+      files:
+        - path: ../driver/driver_dht11.c
+        - path: ../driver/driver_passive_buzzer.c
+        - path: ../driver/driver_timer.c
+        - path: ../driver/beep.c
+        - path: ../driver/beep.h
+      folders: []
+    - name: mytask
+      files:
+        - path: ../mytasks/ShowTimeTask.c
+        - path: ../mytasks/ShowTimeTask.h
+        - path: ../mytasks/Data.h
+        - path: ../mytasks/Data.c
+        - path: ../mytasks/ShowMenu.c
+        - path: ../mytasks/ShowMenu.h
+        - path: ../mytasks/ShowCalendar.c
+        - path: ../mytasks/ShowCalendar.h
+        - path: ../mytasks/ShowClock.c
+        - path: ../mytasks/ShowClock.h
+        - path: ../mytasks/ShowFlashLight.c
+        - path: ../mytasks/ShowFlashLight.h
+        - path: ../mytasks/ShowSetting.c
+        - path: ../mytasks/ShowSetting.h
+        - path: ../mytasks/ShowWoodenFish.c
+        - path: ../mytasks/ShowWoodenFish.h
+        - path: ../mytasks/ShowDHT11.c
+        - path: ../mytasks/ShowDHT11.h
+      folders: []
     - name: ::CMSIS
       files: []
       folders: []
 dependenceList: []
 outDir: build
 miscInfo:
-  uid: 77644c22454bc992ff3020349a3409ed
+  uid: 85c74069fbcc525a8eeca454f89fe3c3
 targets:
-  STM32WATCH:
+  hal_freertos_u8g2:
     cppPreprocessAttrs:
       defineList:
         - USE_HAL_DRIVER
         - STM32F103xB
       incList:
         - ../Core/Inc
-        - ../Drivers/STM32F1xx_HAL_Driver/Inc
         - ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy
+        - ../Drivers/STM32F1xx_HAL_Driver/Inc
         - ../Middlewares/Third_Party/FreeRTOS/Source/include
         - ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2
         - ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3
         - ../Drivers/CMSIS/Device/ST/STM32F1xx/Include
         - ../Drivers/CMSIS/Include
-        - ../Drivers/Wayson_Drivers
-        - ../Drivers/Wayson_Drivers/MyTask
-        - ../MyDrivers
-        - ../MyTasks
         - ../u8g2
+        - ../mytasks
+        - ../driver
+        - ../max30102
         - .cmsis/include
-        - ../MDK-ARM/RTE/_STM32WATCH
+        - ../MDK-ARM/RTE/_hal_freertos_u8g2
       libList: []
     excludeList: []
     toolchain: AC5
@@ -177,8 +197,8 @@ targets:
             $outputTaskExcludes:
               - .bin
             output-format: elf
-            ro-base: ""
-            rw-base: ""
+            ro-base: "0x08000000"
+            rw-base: "0x20000000"
             xo-base: ""
         scatterFilePath: ""
         storageLayout:

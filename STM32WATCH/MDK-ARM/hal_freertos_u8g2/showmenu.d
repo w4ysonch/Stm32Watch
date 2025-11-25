@@ -1,0 +1,52 @@
+hal_freertos_u8g2\showmenu.o: ..\mytasks\ShowMenu.c
+hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+hal_freertos_u8g2\showmenu.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+hal_freertos_u8g2\showmenu.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+hal_freertos_u8g2\showmenu.o: ../Core/Inc/FreeRTOSConfig.h
+hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+hal_freertos_u8g2\showmenu.o: ../Core/Inc/main.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+hal_freertos_u8g2\showmenu.o: ../Core/Inc/stm32f1xx_hal_conf.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/CMSIS/Include/core_cm3.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/CMSIS/Include/cmsis_version.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+hal_freertos_u8g2\showmenu.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
+hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
+hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+hal_freertos_u8g2\showmenu.o: ../Core/Inc/gpio.h
+hal_freertos_u8g2\showmenu.o: ..\driver\beep.h
+hal_freertos_u8g2\showmenu.o: ../u8g2/u8g2.h
+hal_freertos_u8g2\showmenu.o: ../u8g2/u8x8.h
+hal_freertos_u8g2\showmenu.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+hal_freertos_u8g2\showmenu.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+hal_freertos_u8g2\showmenu.o: ..\mytasks\Data.h
