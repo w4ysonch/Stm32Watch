@@ -9,14 +9,14 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "beep.h"
-#include "u8g2.h"
+#include "oled.h"
 #include "Data.h"
 /* USER CODE END Includes */
 
 extern SemaphoreHandle_t g_xSemKey; 
 extern TaskHandle_t xShowMenuTaskHandle;
 extern QueueHandle_t g_xQueueMenu;
-extern u8g2_t u8g2;
+//extern u8g2_t u8g2;
 
 uint16_t WfisTaskRuning;
 
@@ -31,11 +31,11 @@ void ShowWoodenFishTask(void *params)
 	if(NULL != g_xQueueMenu)HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
 
 	/* u8g2 Start */
-	u8g2_Setup_ssd1306_i2c_128x64_noname_f(&u8g2,U8G2_R0, u8x8_byte_hw_i2c, u8g2_stm32_delay);
-	u8g2_InitDisplay(&u8g2); // send init sequence to the display, display is in sleep mode after this,
-	u8g2_SetPowerSave(&u8g2, 0); // wake up display
-	u8g2_ClearDisplay(&u8g2);
-	u8g2_SetFont(&u8g2, u8g2_font_wqy16_t_chinese1);
+//	u8g2_Setup_ssd1306_i2c_128x64_noname_f(&u8g2,U8G2_R0, u8x8_byte_hw_i2c, u8g2_stm32_delay);
+//	u8g2_InitDisplay(&u8g2); // send init sequence to the display, display is in sleep mode after this,
+//	u8g2_SetPowerSave(&u8g2, 0); // wake up display
+//	u8g2_ClearDisplay(&u8g2);
+//	u8g2_SetFont(&u8g2, u8g2_font_wqy16_t_chinese1);
 //	u8g2_SetFont(&u8g2, u8g2_font_spleen32x64_mf);	
 //	u8g2_SetFont(&u8g2, u8g2_font_fur35_tf);
 	
@@ -45,21 +45,21 @@ void ShowWoodenFishTask(void *params)
 	while(1)
 	{
 		WfisTaskRuning = 1;
-		u8g2_ClearBuffer(&u8g2);
+//		u8g2_ClearBuffer(&u8g2);
 
-		u8g2_DrawXBMP(&u8g2, 80, 0, 6, 8, Num_6x8[num1]);		
-		u8g2_DrawXBMP(&u8g2, 88, 0, 6, 8, Num_6x8[num2]);		
-		u8g2_DrawXBMP(&u8g2, 96, 0, 6, 8, Num_6x8[num3]);		
+//		u8g2_DrawXBMP(&u8g2, 80, 0, 6, 8, Num_6x8[num1]);		
+//		u8g2_DrawXBMP(&u8g2, 88, 0, 6, 8, Num_6x8[num2]);		
+//		u8g2_DrawXBMP(&u8g2, 96, 0, 6, 8, Num_6x8[num3]);		
 
-		switch(seclect_flag)
-		{
-			case 0: u8g2_DrawXBMP(&u8g2, 8, 15, 63, 48, wooden_flsh[0]);u8g2_DrawXBMP(&u8g2, 5, 0, 30, 8, hammer);break;
-            case 1: u8g2_DrawXBMP(&u8g2, 8, 15, 49, 38, wooden_flsh[1]);u8g2_DrawXBMP(&u8g2, 10, 8, 30, 8, hammer);seclect_flag = 0;break;
-		}
-		u8g2_DrawXBMP(&u8g2, 75, 37, 32, 16, gongde);
-		u8g2_DrawStr(&u8g2, 110, 47, ":");		
-		
-		u8g2_SendBuffer(&u8g2);
+//		switch(seclect_flag)
+//		{
+//			case 0: u8g2_DrawXBMP(&u8g2, 8, 15, 63, 48, wooden_flsh[0]);u8g2_DrawXBMP(&u8g2, 5, 0, 30, 8, hammer);break;
+//            case 1: u8g2_DrawXBMP(&u8g2, 8, 15, 49, 38, wooden_flsh[1]);u8g2_DrawXBMP(&u8g2, 10, 8, 30, 8, hammer);seclect_flag = 0;break;
+//		}
+//		u8g2_DrawXBMP(&u8g2, 75, 37, 32, 16, gongde);
+//		u8g2_DrawStr(&u8g2, 110, 47, ":");		
+//		
+//		u8g2_SendBuffer(&u8g2);
 		
 		/* 读按键中断队列 */
 		if(wooden_fish_flag == 0 && seclect_flag == 0)
@@ -85,13 +85,13 @@ void ShowWoodenFishTask(void *params)
 			vTaskSuspend(NULL);
 		}
 		
-		u8g2_ClearBuffer(&u8g2);
-		if(add_flag!=0){add_flag--;u8g2_DrawStr(&u8g2, 105, 40, "+1");}
-		switch(seclect_flag)
-		{
-			case 0: u8g2_DrawXBMP(&u8g2, 8, 15, 63, 48, wooden_flsh[0]);u8g2_DrawXBMP(&u8g2, 5, 0, 30, 8, hammer);break;
-            case 1: u8g2_DrawXBMP(&u8g2, 8, 15, 49, 38, wooden_flsh[1]);u8g2_DrawXBMP(&u8g2, 10, 8, 30, 8, hammer);seclect_flag = 0;break;
-		}			
-		u8g2_SendBuffer(&u8g2);
+//		u8g2_ClearBuffer(&u8g2);
+//		if(add_flag!=0){add_flag--;u8g2_DrawStr(&u8g2, 105, 40, "+1");}
+//		switch(seclect_flag)
+//		{
+//			case 0: u8g2_DrawXBMP(&u8g2, 8, 15, 63, 48, wooden_flsh[0]);u8g2_DrawXBMP(&u8g2, 5, 0, 30, 8, hammer);break;
+//            case 1: u8g2_DrawXBMP(&u8g2, 8, 15, 49, 38, wooden_flsh[1]);u8g2_DrawXBMP(&u8g2, 10, 8, 30, 8, hammer);seclect_flag = 0;break;
+//		}			
+//		u8g2_SendBuffer(&u8g2);
 	}
 }

@@ -6,14 +6,14 @@ hal_freertos_u8g2\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32
 hal_freertos_u8g2\stm32f1xx_hal_rcc.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 hal_freertos_u8g2\stm32f1xx_hal_rcc.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
 hal_freertos_u8g2\stm32f1xx_hal_rcc.o: ../Drivers/CMSIS/Include/core_cm3.h
-hal_freertos_u8g2\stm32f1xx_hal_rcc.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+hal_freertos_u8g2\stm32f1xx_hal_rcc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 hal_freertos_u8g2\stm32f1xx_hal_rcc.o: ../Drivers/CMSIS/Include/cmsis_version.h
 hal_freertos_u8g2\stm32f1xx_hal_rcc.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 hal_freertos_u8g2\stm32f1xx_hal_rcc.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 hal_freertos_u8g2\stm32f1xx_hal_rcc.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
 hal_freertos_u8g2\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 hal_freertos_u8g2\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-hal_freertos_u8g2\stm32f1xx_hal_rcc.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+hal_freertos_u8g2\stm32f1xx_hal_rcc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 hal_freertos_u8g2\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 hal_freertos_u8g2\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 hal_freertos_u8g2\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h

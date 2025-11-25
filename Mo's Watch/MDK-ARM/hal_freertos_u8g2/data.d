@@ -1,7 +1,7 @@
 hal_freertos_u8g2\data.o: ..\mytasks\Data.c
 hal_freertos_u8g2\data.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-hal_freertos_u8g2\data.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-hal_freertos_u8g2\data.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+hal_freertos_u8g2\data.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+hal_freertos_u8g2\data.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 hal_freertos_u8g2\data.o: ../Core/Inc/FreeRTOSConfig.h
 hal_freertos_u8g2\data.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 hal_freertos_u8g2\data.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -43,7 +43,3 @@ hal_freertos_u8g2\data.o: ..\mytasks\Data.h
 hal_freertos_u8g2\data.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 hal_freertos_u8g2\data.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 hal_freertos_u8g2\data.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
-hal_freertos_u8g2\data.o: ../u8g2/u8g2.h
-hal_freertos_u8g2\data.o: ../u8g2/u8x8.h
-hal_freertos_u8g2\data.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-hal_freertos_u8g2\data.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h

@@ -40,7 +40,7 @@ typedef struct str1{
 	struct str1 *next_str;
 }str1, *p_str;
 
-void u8g2_config(void);
+
 void ui_run(int* a, int* a_trg, int b);
 void ui_left(int32_t* a, int b);
 void ui_right(int32_t* a, int b);

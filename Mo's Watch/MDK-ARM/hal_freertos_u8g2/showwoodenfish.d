@@ -1,7 +1,7 @@
 hal_freertos_u8g2\showwoodenfish.o: ..\mytasks\ShowWoodenFish.c
 hal_freertos_u8g2\showwoodenfish.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-hal_freertos_u8g2\showwoodenfish.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-hal_freertos_u8g2\showwoodenfish.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+hal_freertos_u8g2\showwoodenfish.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+hal_freertos_u8g2\showwoodenfish.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 hal_freertos_u8g2\showwoodenfish.o: ../Core/Inc/FreeRTOSConfig.h
 hal_freertos_u8g2\showwoodenfish.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 hal_freertos_u8g2\showwoodenfish.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -44,8 +44,6 @@ hal_freertos_u8g2\showwoodenfish.o: ../Middlewares/Third_Party/FreeRTOS/Source/i
 hal_freertos_u8g2\showwoodenfish.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 hal_freertos_u8g2\showwoodenfish.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 hal_freertos_u8g2\showwoodenfish.o: ..\driver\beep.h
-hal_freertos_u8g2\showwoodenfish.o: ../u8g2/u8g2.h
-hal_freertos_u8g2\showwoodenfish.o: ../u8g2/u8x8.h
-hal_freertos_u8g2\showwoodenfish.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-hal_freertos_u8g2\showwoodenfish.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+hal_freertos_u8g2\showwoodenfish.o: ..\oled\oled.h
+hal_freertos_u8g2\showwoodenfish.o: ..\oled\oledfont.h
 hal_freertos_u8g2\showwoodenfish.o: ..\mytasks\Data.h

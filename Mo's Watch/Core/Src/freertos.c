@@ -27,7 +27,7 @@
 /* USER CODE BEGIN Includes */
 #include "event_groups.h"
 #include "queue.h"
-#include "u8g2.h"
+#include "oled.h"
 #include "beep.h"
 #include "Data.h"
 #include "ShowTimeTask.h"
@@ -78,6 +78,7 @@ TaskHandle_t xShowSettingTaskHandle = NULL;
 TaskHandle_t xShowWoodenFishTaskHandle = NULL;
 TaskHandle_t xShowDHT11TaskHandle = NULL;
 TaskHandle_t xShowHRSPO2TaskHandle = NULL;
+TaskHandle_t xShowStepTaskHandle = NULL;
 
 QueueHandle_t g_xQueueMenu;	
 uint16_t key1_filter = 0;
@@ -105,6 +106,7 @@ extern void ShowFlashLightTask(void *params);
 extern void ShowWoodenFishTask(void *params);
 extern void ShowClockTimeTask(void *params);
 extern void ShowSetting_Task(void *params);
+extern void ShowStepTask(void *params);
 
 /* USER CODE END FunctionPrototypes */
 
@@ -164,17 +166,17 @@ void MX_FREERTOS_Init(void) {
 
 /******** 5 apps ********/
 	/*1*/
-  	xTaskCreate(ShowCalendarTask, "ShowCalendarTask", 256, NULL, osPriorityNormal, &xShowCalendarTaskHandle);
-	/*2*/
-  	xTaskCreate(ShowFlashLightTask, "ShowFlashLightTask", Task_default_size, NULL, osPriorityNormal, &xShowFlashLightTaskHandle);
-    /*3*/
-  	xTaskCreate(ShowDHT11Task, "ShowDHT11Task", Task_default_size, NULL, osPriorityNormal, &xShowDHT11TaskHandle);
+//  	xTaskCreate(ShowCalendarTask, "ShowCalendarTask", 256, NULL, osPriorityNormal, &xShowCalendarTaskHandle);
+//	/*2*/
+//  	xTaskCreate(ShowFlashLightTask, "ShowFlashLightTask", Task_default_size, NULL, osPriorityNormal, &xShowFlashLightTaskHandle);
+//    /*3*/
+//  	xTaskCreate(ShowDHT11Task, "ShowDHT11Task", Task_default_size, NULL, osPriorityNormal, &xShowDHT11TaskHandle);
 	//xTaskCreate(ShowWoodenFishTask, "ShowWoodenFishTask", Task_default_size, NULL, osPriorityNormal, &xShowWoodenFishTaskHandle);
     /*4*/
-  	xTaskCreate(ShowClockTimeTask, "ShowClockTimeTask", Task_default_size, NULL, osPriorityNormal, &xShowClockTaskHandle);
-	/*5*/
-  	xTaskCreate(ShowSetting_Task, "ShowSetting_Task", 256, NULL, osPriorityNormal, &xShowSettingTaskHandle);
-
+//  	xTaskCreate(ShowClockTimeTask, "ShowClockTimeTask", Task_default_size, NULL, osPriorityNormal, &xShowClockTaskHandle);
+//	/*5*/
+//  	xTaskCreate(ShowSetting_Task, "ShowSetting_Task", 256, NULL, osPriorityNormal, &xShowSettingTaskHandle);
+	xTaskCreate(ShowStepTask, "showsteptask", 256, NULL, osPriorityNormal, &xShowStepTaskHandle);
 //	PassiveBuzzer_Test();
   /* USER CODE END RTOS_THREADS */
 

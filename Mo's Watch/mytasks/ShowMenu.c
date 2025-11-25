@@ -11,10 +11,9 @@
 #include "queue.h"
 #include "gpio.h"
 #include "beep.h"
-#include "u8g2.h"
+#include "oled.h"
 #include "Data.h"
 
-extern u8g2_t u8g2;
 extern QueueHandle_t g_xQueueMenu;
 //extern SemaphoreHandle_t g_xSemMenu; 
 
@@ -26,6 +25,7 @@ extern TaskHandle_t xShowSettingTaskHandle;
 extern TaskHandle_t xShowClockTaskHandle;
 extern TaskHandle_t xShowCalendarTaskHandle;
 extern TaskHandle_t xShowDHT11TaskHandle;
+extern TaskHandle_t xShowStepTaskHandle;
 
 const char str[5][10] = {"cleder", "torch", "hum", "clock", "more"};
 
@@ -56,138 +56,120 @@ uint32_t seclect_end = 0;//showsetting
 /* draw app's icon */
 void ShowUI(void)
 {
-	/* show_gameui */
-	u8g2_DrawXBMP(&u8g2, Left.x, Left.y, Left.w, Left.h, LeftMove);
-	u8g2_DrawXBMP(&u8g2, Right.x, Right.y, Right.w, Right.h, RightMove);
-	
-	u8g2_DrawStr(&u8g2, String.x, String.y, str[str_flag]);
+    OLED_Clear();
+    
 
-	u8g2_DrawXBMP(&u8g2, cleder.x, cleder.y, cleder.w, cleder.h, cleder.data);
-	u8g2_DrawXBMP(&u8g2, torch.x, torch.y, torch.w, torch.h, torch.data);	
-	u8g2_DrawXBMP(&u8g2, hum.x, hum.y, hum.w, hum.h, hum.data);
-	u8g2_DrawXBMP(&u8g2, clock.x, clock.y, clock.w, clock.h, clock.data);
-	u8g2_DrawXBMP(&u8g2, setting.x, setting.y, setting.w, setting.h, setting.data);
+    OLED_ShowString(40, 0, "MENU", 16, 0);
+    
 
-	u8g2_DrawDisc(&u8g2, dock[dock_pos], dock_y, dock_r, U8G2_DRAW_ALL);
-	for(int i = 0; i<5; i++)
-	{
-		u8g2_DrawCircle(&u8g2, dock[i], dock_y, dock_r, U8G2_DRAW_ALL);
-	}	
-	u8g2_DrawFrame(&u8g2, Rec_select.x, Rec_select.y, Rec_select.w, Rec_select.h);
-};
+    OLED_ShowString(40, 1, (char*)str[str_flag], 12, 1); 
+    
+    OLED_ShowString(10, 2, "Cal", 12, dock_pos == 0 ? 1 : 0);
+    OLED_ShowString(50, 2, "Light", 12, dock_pos == 1 ? 1 : 0);
+    OLED_ShowString(90, 2, "Hum", 12, dock_pos == 2 ? 1 : 0);
+    
+    // ???  
+    OLED_ShowString(10, 4, "Clock", 12, dock_pos == 3 ? 1 : 0);
+    OLED_ShowString(50, 4, "Set", 12, dock_pos == 4 ? 1 : 0);
+    OLED_ShowString(90, 4, "More", 12, 0);
+    
+    /* ????????? */
+    OLED_ShowString(0, 6, "<", 12, 0);
+    OLED_ShowString(120, 6, ">", 12, 0);
+    
+    // ??????
+    for(int i = 0; i < 6; i++)
+    {
+        if(i == dock_pos)
+        {
+            OLED_ShowChar(30 + i * 15, 6, '#', 12, 0); // ????
+        }
+        else
+        {
+            OLED_ShowChar(30 + i * 15, 6, '.', 12, 0); // ???
+        }
+    }
+    
+
+    OLED_ShowString(10, 7, "Sel:OK", 12, 0);
+    OLED_ShowString(70, 7, "Back:Up", 12, 0);
+}
+
+
+void simple_animation_left(void)
+{
+    for(int i = 0; i < 3; i++)
+    {
+        ShowUI();
+        OLED_ShowString(60, 3, "<--", 12, 0);
+        vTaskDelay(50);
+    }
+}
+
+void simple_animation_right(void)
+{
+    for(int i = 0; i < 3; i++)
+    {
+        ShowUI();
+        OLED_ShowString(60, 3, "-->", 12, 0);
+        vTaskDelay(50);
+    }
+}
 
 void ShowMenuTask(void *params)
 {
-//	xSemaphoreTake(g_xQueueMenu, portMAX_DELAY);
-	
-	/* system sound */
-	buzzer_init();
-   
-	/* create queue */
-	g_xQueueMenu = xQueueCreate(4, 4);
-	if(NULL != g_xQueueMenu)HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);	
-	/*u8g2_config*/
-	u8g2_config();
-	/* ShowUI */
-//	u8g2_SetFont(&u8g2, u8g2_font_wqy16_t_chinese1);
-	u8g2_FirstPage(&u8g2);
-	do {
-	u8g2_SendBuffer(&u8g2);
-   	} while (u8g2_NextPage(&u8g2));
-	
-	struct Key_data	key_data;
-	
-	while(1)
-	{
-		u8g2_ClearBuffer(&u8g2);
-		ShowUI();
-		u8g2_SendBuffer(&u8g2);
-		/* receive queue data and keep waitting */
-		if(queue_flag == 0)
-		{
-			pdPASS == xQueueReceive(g_xQueueMenu, &key_data, portMAX_DELAY);
-		}
-		/* handle data */
-		if(key_data.rdata == 1)
-		{	
-			end_flag = 0;
-//			if(end_flag!)
-			if(dock_pos != 0)
-			{
-				ui_right(&cleder.x, 2);ui_right(&torch.x, 2);ui_right(&hum.x, 2);ui_right(&clock.x, 2);ui_right(&setting.x, 2);
-				/* state_machine */
-				if(dock_status==0)dock_status=1;
-				dock_status--;
-				switch(dock_pos)
-				{
-					case 2:if(dock_status!=0){ui_up(&cleder.y, 1);ui_up(&torch.y, 1);ui_down(&hum.y, 1);ui_down(&clock.y, 1);}break;
-				    case 1:if(dock_status!=0){ui_up(&cleder.y, 1);ui_up(&setting.y, 1);ui_down(&torch.y, 1);ui_down(&hum.y, 1);}break;
-					case 4:if(dock_status!=0){ui_up(&clock.y, 1);ui_up(&hum.y, 1);ui_down(&setting.y, 1);ui_down(&cleder.y, 1);}break;
-					case 3:if(dock_status!=0){ui_up(&hum.y, 1);ui_up(&torch.y, 1);ui_down(&setting.y, 1);ui_down(&clock.y, 1);}break;
-				}
-			}
-            queue_flag++;	
-			if(queue_flag == 20)
-			{
-				dock_status=10;
-				end_flag = 1;
-				if(dock_pos != 0){dock_pos--;str_flag--;}
-				queue_flag = 0;
-				key_data.rdata = 0;
-				key_data.ldata = 0;
-			}
-			if(end_flag == 1)buzzer_buzz(2000, 100);
-		}
-		else if(key_data.ldata == 1)
-		{
-            end_flag = 0;
-			if(dock_pos < 4)
-			{		
-				ui_left(&cleder.x, 2);ui_left(&torch.x, 2);ui_left(&hum.x, 2);ui_left(&clock.x, 2);ui_left(&setting.x, 2);
-				/* state_machine */
-				if(dock_status==0)dock_status=1;
-				dock_status--;
-				switch(dock_pos)
-				{
-					case 0:if(dock_status!=0){ui_up(&hum.y, 1);ui_up(&torch.y, 1);ui_down(&cleder.y, 1);ui_down(&setting.y, 1);}break;
-				    case 1:if(dock_status!=0){ui_up(&hum.y, 1);ui_up(&clock.y, 1);ui_down(&torch.y, 1);ui_down(&cleder.y, 1);}break;
-					case 2:if(dock_status!=0){ui_up(&clock.y, 1);ui_up(&setting.y, 1);ui_down(&hum.y, 1);ui_down(&torch.y, 1);}break;
-					case 3:if(dock_status!=0){ui_up(&setting.y, 1);ui_up(&cleder.y, 1);ui_down(&clock.y, 1);ui_down(&hum.y, 1);}break;
-				}				
-			}
-            queue_flag++;	
-			if(queue_flag == 20) 
-			{
-				dock_status = 10;
-				end_flag = 1;
-				if(dock_pos < 4){dock_pos++;str_flag++;}
-				queue_flag = 0;
-				key_data.ldata = 0;
-				key_data.rdata = 0;
-			}
-			if(end_flag == 1)buzzer_buzz(2000, 100);
-		}
-		/* ststus machine : task scheduling  */
-		else if(key_data.exdata == 1)
-		{
-			buzzer_buzz(2000, 100);
-			switch(dock_pos)
-			{
-				case 0: vTaskResume(xShowCalendarTaskHandle);vTaskSuspend(NULL);key_data.exdata = 0;break;
-				case 1: vTaskResume(xShowFlashLightTaskHandle);vTaskSuspend(NULL);key_data.exdata = 0;break;
-				case 2: vTaskResume(xShowDHT11TaskHandle);vTaskSuspend(NULL);key_data.exdata = 0;break;
-				case 3: vTaskResume(xShowClockTaskHandle);vTaskSuspend(NULL);key_data.exdata = 0;break;
-				case 4: vTaskResume(xShowSettingTaskHandle);vTaskSuspend(NULL);key_data.exdata = 0;break;
-			}
-		}
-		else if(key_data.updata == 1)
-		{
-			/* SysSound */
-			buzzer_buzz(2000, 100);
-			vTaskResume(xShowTimeTaskHandle);
-			vTaskSuspend(NULL);
-			key_data.updata = 0;
-		}
-	}
+    buzzer_init();
+    
+    g_xQueueMenu = xQueueCreate(4, 4);
+    if(NULL != g_xQueueMenu) HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);    
+    
+    OLED_Init();
+    OLED_Clear();
+    OLED_Display_On();
+    
+    struct Key_data key_data;
+    
+    while(1)
+    {
+        ShowUI();
+        
+        if(xQueueReceive(g_xQueueMenu, &key_data, 100 / portTICK_PERIOD_MS) == pdTRUE)
+        {
+            if(key_data.rdata == 1 && dock_pos > 0)
+            {
+                simple_animation_right();
+                dock_pos--;
+                str_flag--;
+                buzzer_buzz(2000, 50);
+            }
+            else if(key_data.ldata == 1 && dock_pos < 5)
+            {
+                simple_animation_left();
+                dock_pos++;
+                str_flag++;
+                buzzer_buzz(2000, 50);
+            }
+            else if(key_data.exdata == 1)
+            {
+                buzzer_buzz(2500, 100);
+                switch(dock_pos)
+                {
+                    case 0: vTaskResume(xShowCalendarTaskHandle); vTaskSuspend(NULL); break;
+                    case 1: vTaskResume(xShowFlashLightTaskHandle); vTaskSuspend(NULL); break;
+                    case 2: vTaskResume(xShowDHT11TaskHandle); vTaskSuspend(NULL); break;
+                    case 3: vTaskResume(xShowClockTaskHandle); vTaskSuspend(NULL); break;
+                    case 4: vTaskResume(xShowSettingTaskHandle); vTaskSuspend(NULL); break;
+										case 5: vTaskResume(xShowStepTaskHandle); vTaskSuspend(NULL); break;
+                }
+            }
+            else if(key_data.updata == 1)
+            {
+                buzzer_buzz(2000, 100);
+                vTaskResume(xShowTimeTaskHandle);
+                vTaskSuspend(NULL);
+            }
+        }
+        
+        vTaskDelay(10);
+    }
 }
-

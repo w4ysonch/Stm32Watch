@@ -1,7 +1,7 @@
 hal_freertos_u8g2\driver_dht11.o: ..\driver\driver_dht11.c
 hal_freertos_u8g2\driver_dht11.o: ..\driver\driver_dht11.h
 hal_freertos_u8g2\driver_dht11.o: ..\driver\driver_timer.h
-hal_freertos_u8g2\driver_dht11.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+hal_freertos_u8g2\driver_dht11.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 hal_freertos_u8g2\driver_dht11.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 hal_freertos_u8g2\driver_dht11.o: ../Core/Inc/stm32f1xx_hal_conf.h
 hal_freertos_u8g2\driver_dht11.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
@@ -15,7 +15,7 @@ hal_freertos_u8g2\driver_dht11.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 hal_freertos_u8g2\driver_dht11.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
 hal_freertos_u8g2\driver_dht11.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 hal_freertos_u8g2\driver_dht11.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-hal_freertos_u8g2\driver_dht11.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+hal_freertos_u8g2\driver_dht11.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 hal_freertos_u8g2\driver_dht11.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 hal_freertos_u8g2\driver_dht11.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 hal_freertos_u8g2\driver_dht11.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h

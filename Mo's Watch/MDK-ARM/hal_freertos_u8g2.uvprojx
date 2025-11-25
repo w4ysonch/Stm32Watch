@@ -10,13 +10,11 @@
       <TargetName>hal_freertos_u8g2</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
-      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F103C8</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F1xx_DFP.2.3.0</PackID>
+          <PackID>Keil.STM32F1xx_DFP.2.2.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000-0x20004FFF) IROM(0x8000000-0x800FFFF)  CLOCK(8000000) CPUTYPE("Cortex-M3")</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -86,8 +84,6 @@
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
-            <nStopA1X>0</nStopA1X>
-            <nStopA2X>0</nStopA2X>
           </AfterMake>
           <SelectedForBatchBuild>0</SelectedForBatchBuild>
           <SVCSIdString></SVCSIdString>
@@ -126,6 +122,47 @@
             <HexOffset>0</HexOffset>
             <Oh166RecLen>16</Oh166RecLen>
           </OPTHX>
+          <Simulator>
+            <UseSimulator>0</UseSimulator>
+            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
+            <RunToMain>1</RunToMain>
+            <RestoreBreakpoints>1</RestoreBreakpoints>
+            <RestoreWatchpoints>1</RestoreWatchpoints>
+            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
+            <RestoreFunctions>1</RestoreFunctions>
+            <RestoreToolbox>1</RestoreToolbox>
+            <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
+            <RestoreSysVw>1</RestoreSysVw>
+          </Simulator>
+          <Target>
+            <UseTarget>1</UseTarget>
+            <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
+            <RunToMain>1</RunToMain>
+            <RestoreBreakpoints>1</RestoreBreakpoints>
+            <RestoreWatchpoints>1</RestoreWatchpoints>
+            <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
+            <RestoreFunctions>1</RestoreFunctions>
+            <RestoreToolbox>1</RestoreToolbox>
+            <RestoreTracepoints>1</RestoreTracepoints>
+            <RestoreSysVw>1</RestoreSysVw>
+          </Target>
+          <RunDebugAfterBuild>0</RunDebugAfterBuild>
+          <TargetSelection>11</TargetSelection>
+          <SimDlls>
+            <CpuDll></CpuDll>
+            <CpuDllArguments></CpuDllArguments>
+            <PeripheralDll></PeripheralDll>
+            <PeripheralDllArguments></PeripheralDllArguments>
+            <InitializationFile></InitializationFile>
+          </SimDlls>
+          <TargetDlls>
+            <CpuDll></CpuDll>
+            <CpuDllArguments></CpuDllArguments>
+            <PeripheralDll></PeripheralDll>
+            <PeripheralDllArguments></PeripheralDllArguments>
+            <InitializationFile></InitializationFile>
+            <Driver>STLink\ST-LINKIII-KEIL_SWO.dll</Driver>
+          </TargetDlls>
         </DebugOption>
         <Utilities>
           <Flash1>
@@ -184,15 +221,12 @@
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
             <RvdsVP>0</RvdsVP>
-            <RvdsMve>0</RvdsMve>
-            <RvdsCdeCp>0</RvdsCdeCp>
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
-            <nSecure>0</nSecure>
             <RoSelD>3</RoSelD>
             <RwSelD>3</RwSelD>
             <CodeSel>0</CodeSel>
@@ -313,7 +347,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>4</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -326,20 +360,12 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
-            <uGnu>0</uGnu>
             <useXO>0</useXO>
-            <v6Lang>1</v6Lang>
-            <v6LangP>1</v6LangP>
-            <vShortEn>1</vShortEn>
-            <vShortWch>1</vShortWch>
-            <v6Lto>0</v6Lto>
-            <v6WtE>0</v6WtE>
-            <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/STM32F1xx_HAL_Driver/Inc;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../u8g2;../mytasks;..\driver;..\max30102</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/STM32F1xx_HAL_Driver/Inc;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../u8g2;../mytasks;..\driver;..\max30102;..\oled</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -352,7 +378,6 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
-            <ClangAsOpt>4</ClangAsOpt>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
@@ -535,15 +560,7 @@
                     <uThumb>2</uThumb>
                     <uSurpInc>2</uSurpInc>
                     <uC99>2</uC99>
-                    <uGnu>2</uGnu>
                     <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
                     <VariousControls>
                       <MiscControls></MiscControls>
                       <Define></Define>
@@ -627,216 +644,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>u8g2</GroupName>
-          <Files>
-            <File>
-              <FileName>mui.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\mui.c</FilePath>
-            </File>
-            <File>
-              <FileName>mui_u8g2.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\mui_u8g2.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_bitmap.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_bitmap.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_box.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_box.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_buffer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_buffer.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_button.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_button.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_circle.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_circle.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_cleardisplay.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_cleardisplay.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_d_memory.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_d_memory.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_d_setup.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_d_setup.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_font.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_font.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_fonts.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_fonts.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_hvline.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_hvline.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_input_value.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_input_value.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_intersection.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_intersection.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_kerning.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_kerning.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_line.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_line.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_ll_hvline.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_ll_hvline.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_message.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_message.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_polygon.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_polygon.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_selection_list.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_selection_list.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8g2_setup.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8g2_setup.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8log.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8log.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8log_u8g2.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8log_u8g2.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8log_u8x8.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8log_u8x8.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_8x8.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_8x8.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_byte.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_byte.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_cad.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_cad.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_capture.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_capture.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_d_ssd1306_128x64_noname.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_d_ssd1306_128x64_noname.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_debounce.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_debounce.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_display.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_display.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_fonts.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_fonts.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_input_value.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_input_value.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_message.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_message.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_selection_list.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_selection_list.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_setup.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_setup.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_string.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_string.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_u8toa.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_u8toa.c</FilePath>
-            </File>
-            <File>
-              <FileName>u8x8_u16toa.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\u8g2\u8x8_u16toa.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>driver</GroupName>
           <Files>
             <File>
@@ -863,6 +670,36 @@
               <FileName>beep.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\driver\beep.h</FilePath>
+            </File>
+            <File>
+              <FileName>inv_mpu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\driver\inv_mpu.c</FilePath>
+            </File>
+            <File>
+              <FileName>inv_mpu_dmp_motion_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\driver\inv_mpu_dmp_motion_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>mpu6050.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\driver\mpu6050.c</FilePath>
+            </File>
+            <File>
+              <FileName>mpu6050iic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\driver\mpu6050iic.c</FilePath>
+            </File>
+            <File>
+              <FileName>dmpKey.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\driver\dmpKey.h</FilePath>
+            </File>
+            <File>
+              <FileName>dmpmap.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\driver\dmpmap.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -958,6 +795,41 @@
               <FileName>ShowDHT11.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\mytasks\ShowDHT11.h</FilePath>
+            </File>
+            <File>
+              <FileName>ShowStepTask.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\mytasks\ShowStepTask.c</FilePath>
+            </File>
+            <File>
+              <FileName>ShowStepTask.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\mytasks\ShowStepTask.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>oled</GroupName>
+          <Files>
+            <File>
+              <FileName>oled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\oled\oled.c</FilePath>
+            </File>
+            <File>
+              <FileName>oled.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\oled\oled.h</FilePath>
+            </File>
+            <File>
+              <FileName>oledfont.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\oled\oledfont.c</FilePath>
+            </File>
+            <File>
+              <FileName>oledfont.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\oled\oledfont.h</FilePath>
             </File>
           </Files>
         </Group>

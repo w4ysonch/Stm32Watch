@@ -1,9 +1,9 @@
 hal_freertos_u8g2\u8x8_byte.o: ..\u8g2\u8x8_byte.c
 hal_freertos_u8g2\u8x8_byte.o: ..\u8g2\u8x8.h
-hal_freertos_u8g2\u8x8_byte.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-hal_freertos_u8g2\u8x8_byte.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-hal_freertos_u8g2\u8x8_byte.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-hal_freertos_u8g2\u8x8_byte.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+hal_freertos_u8g2\u8x8_byte.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+hal_freertos_u8g2\u8x8_byte.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+hal_freertos_u8g2\u8x8_byte.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+hal_freertos_u8g2\u8x8_byte.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
 hal_freertos_u8g2\u8x8_byte.o: ../Core/Inc/i2c.h
 hal_freertos_u8g2\u8x8_byte.o: ../Core/Inc/main.h
 hal_freertos_u8g2\u8x8_byte.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
