@@ -1,11 +1,11 @@
 hal_freertos_u8g2\beep.o: ..\driver\beep.c
-hal_freertos_u8g2\beep.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-hal_freertos_u8g2\beep.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-hal_freertos_u8g2\beep.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+hal_freertos_u8g2\beep.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+hal_freertos_u8g2\beep.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+hal_freertos_u8g2\beep.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 hal_freertos_u8g2\beep.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 hal_freertos_u8g2\beep.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
-hal_freertos_u8g2\beep.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-hal_freertos_u8g2\beep.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+hal_freertos_u8g2\beep.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+hal_freertos_u8g2\beep.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 hal_freertos_u8g2\beep.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 hal_freertos_u8g2\beep.o: ../Core/Inc/FreeRTOSConfig.h
 hal_freertos_u8g2\beep.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h

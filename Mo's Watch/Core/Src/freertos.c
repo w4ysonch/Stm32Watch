@@ -27,7 +27,6 @@
 /* USER CODE BEGIN Includes */
 #include "event_groups.h"
 #include "queue.h"
-#include "oled.h"
 #include "beep.h"
 #include "Data.h"
 #include "ShowTimeTask.h"
@@ -78,7 +77,6 @@ TaskHandle_t xShowSettingTaskHandle = NULL;
 TaskHandle_t xShowWoodenFishTaskHandle = NULL;
 TaskHandle_t xShowDHT11TaskHandle = NULL;
 TaskHandle_t xShowHRSPO2TaskHandle = NULL;
-TaskHandle_t xShowStepTaskHandle = NULL;
 
 QueueHandle_t g_xQueueMenu;	
 uint16_t key1_filter = 0;
@@ -106,7 +104,6 @@ extern void ShowFlashLightTask(void *params);
 extern void ShowWoodenFishTask(void *params);
 extern void ShowClockTimeTask(void *params);
 extern void ShowSetting_Task(void *params);
-extern void ShowStepTask(void *params);
 
 /* USER CODE END FunctionPrototypes */
 
@@ -166,17 +163,17 @@ void MX_FREERTOS_Init(void) {
 
 /******** 5 apps ********/
 	/*1*/
-//  	xTaskCreate(ShowCalendarTask, "ShowCalendarTask", 256, NULL, osPriorityNormal, &xShowCalendarTaskHandle);
-//	/*2*/
-//  	xTaskCreate(ShowFlashLightTask, "ShowFlashLightTask", Task_default_size, NULL, osPriorityNormal, &xShowFlashLightTaskHandle);
-//    /*3*/
-//  	xTaskCreate(ShowDHT11Task, "ShowDHT11Task", Task_default_size, NULL, osPriorityNormal, &xShowDHT11TaskHandle);
+  	xTaskCreate(ShowCalendarTask, "ShowCalendarTask", 256, NULL, osPriorityNormal, &xShowCalendarTaskHandle);
+	/*2*/
+  	xTaskCreate(ShowFlashLightTask, "ShowFlashLightTask", Task_default_size, NULL, osPriorityNormal, &xShowFlashLightTaskHandle);
+    /*3*/
+  	xTaskCreate(ShowDHT11Task, "ShowDHT11Task", Task_default_size, NULL, osPriorityNormal, &xShowDHT11TaskHandle);
 	//xTaskCreate(ShowWoodenFishTask, "ShowWoodenFishTask", Task_default_size, NULL, osPriorityNormal, &xShowWoodenFishTaskHandle);
     /*4*/
-//  	xTaskCreate(ShowClockTimeTask, "ShowClockTimeTask", Task_default_size, NULL, osPriorityNormal, &xShowClockTaskHandle);
-//	/*5*/
-//  	xTaskCreate(ShowSetting_Task, "ShowSetting_Task", 256, NULL, osPriorityNormal, &xShowSettingTaskHandle);
-	xTaskCreate(ShowStepTask, "showsteptask", 256, NULL, osPriorityNormal, &xShowStepTaskHandle);
+  	xTaskCreate(ShowClockTimeTask, "ShowClockTimeTask", Task_default_size, NULL, osPriorityNormal, &xShowClockTaskHandle);
+	/*5*/
+  	xTaskCreate(ShowSetting_Task, "ShowSetting_Task", 256, NULL, osPriorityNormal, &xShowSettingTaskHandle);
+
 //	PassiveBuzzer_Test();
   /* USER CODE END RTOS_THREADS */
 
@@ -224,50 +221,62 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		
     if(GPIO_Pin == GPIO_PIN_11)
 	{ 
-		for(int i = 0; i<5000; i++){}
-		if(end_flag == 1&&seclect_end == 0)
+		for(int i = 0; i<20000; i++){}
+		if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_11) == GPIO_PIN_SET)
 		{
-			RM_Flag = 1;
-			key_data.rdata = RM_Flag;
-			xQueueSendToBackFromISR(g_xQueueMenu, &key_data, NULL);
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
-			RM_Flag = 0;			
+			if(end_flag == 1&&seclect_end == 0)
+			{
+				RM_Flag = 1;
+				key_data.rdata = RM_Flag;
+				xQueueSendToBackFromISR(g_xQueueMenu, &key_data, NULL);
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
+				RM_Flag = 0;			
+			}
 		}
 	}
 	if(GPIO_Pin == GPIO_PIN_10)
 	{ 
-		for(int i = 0; i<5000; i++){}
-		if(end_flag == 1&&seclect_end == 0)
+		for(int i = 0; i<20000; i++){}
+		if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_10) == GPIO_PIN_SET)
 		{
-		 	LM_Flag = 1;
-			key_data.ldata = LM_Flag;
-			xQueueSendToBackFromISR(g_xQueueMenu, &key_data, NULL);
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
-			LM_Flag = 0;
+			if(end_flag == 1&&seclect_end == 0)
+			{
+				LM_Flag = 1;
+				key_data.ldata = LM_Flag;
+				xQueueSendToBackFromISR(g_xQueueMenu, &key_data, NULL);
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
+				LM_Flag = 0;
+			}
 		}
 	}
 	if(GPIO_Pin == GPIO_PIN_1)
 	{
-		for(int i = 0; i<5000; i++){}		
-		if(end_flag == 1&&seclect_end == 0)
+		for(int i = 0; i<20000; i++){}		
+		if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1) == GPIO_PIN_SET)
 		{
-			EN_Flag = 1;
-			key_data.updata = EN_Flag;
-			xQueueSendToBackFromISR(g_xQueueMenu, &key_data, NULL);
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
-			EN_Flag = 0;
+			if(end_flag == 1&&seclect_end == 0)
+			{
+				EN_Flag = 1;
+				key_data.updata = EN_Flag;
+				xQueueSendToBackFromISR(g_xQueueMenu, &key_data, NULL);
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
+				EN_Flag = 0;
+			}
 		}
 	}
 	if(GPIO_Pin == GPIO_PIN_0)
 	{
-		for(int i = 0; i<5000; i++){}		
-		if(end_flag == 1&&seclect_end == 0)
+		for(int i = 0; i<20000; i++){}		
+		if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == GPIO_PIN_SET)
 		{
-			EX_Flag = 1;
-			key_data.exdata = EX_Flag;
-			if(end_flag == 1&&seclect_end == 0)xQueueSendToBackFromISR(g_xQueueMenu, &key_data, NULL);
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
-			EX_Flag = 0;
+			if(end_flag == 1&&seclect_end == 0)
+			{
+				EX_Flag = 1;
+				key_data.exdata = EX_Flag;
+				if(end_flag == 1&&seclect_end == 0)xQueueSendToBackFromISR(g_xQueueMenu, &key_data, NULL);
+				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
+				EX_Flag = 0;
+			}
 		}
 	}
 }

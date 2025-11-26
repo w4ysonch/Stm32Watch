@@ -5,6 +5,7 @@
 #include "task.h"
 #include "main.h"
 #include "cmsis_os.h"
+#include "oled.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -40,7 +41,7 @@ typedef struct str1{
 	struct str1 *next_str;
 }str1, *p_str;
 
-
+void u8g2_config(void);
 void ui_run(int* a, int* a_trg, int b);
 void ui_left(int32_t* a, int b);
 void ui_right(int32_t* a, int b);

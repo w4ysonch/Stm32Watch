@@ -89,15 +89,9 @@ void ShowCalendarTask(void *params)
 	g_xQueueMenu = xQueueCreate(1, 4);
 	if(NULL != g_xQueueMenu)HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
 
-//	u8g2_t u8g2;
-//	u8g2_Setup_ssd1306_i2c_128x64_noname_f(&u8g2,U8G2_R0, u8x8_byte_hw_i2c, u8g2_stm32_delay);
-//	u8g2_InitDisplay(&u8g2); // send init sequence to the display, display is in sleep mode after this,
-//	u8g2_SetPowerSave(&u8g2, 0); // wake up display
-//	u8g2_ClearDisplay(&u8g2);
-//	u8g2_SetFont(&u8g2, u8g2_font_spleen5x8_mf);
-
-//	u8g2_SendBuffer(&u8g2);
-//	
+	OLED_Init();
+	OLED_Clear();
+	
 	struct Key_data	key_data;
 
 	const char ucMonthDay[32][3] = {"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"};	
@@ -115,10 +109,10 @@ void ShowCalendarTask(void *params)
 	
 	while(1)
 	{	
-//		u8g2_ClearBuffer(&u8g2);			
+		OLED_Clear();			
 			
 		for(int i=0; i<=6; i++){
-//			u8g2_DrawStr(&u8g2, usWeekX[i], 8, ucWeekHeader[i]);			
+			OLED_ShowString(usWeekX[i], 8/8, (char*)ucWeekHeader[i], 12, 0);			
 		}
 		
 		/* month对应月份 */
@@ -142,15 +136,11 @@ void ShowCalendarTask(void *params)
 			}else if(enter_temp == 0){
 				week_pos = week_pos+1;			
 			}
-//			u8g2_DrawStr(&u8g2, usWeekX[enter_temp], usWeekY[week_pos], ucMonthDay[k]);	
+			OLED_ShowString(usWeekX[enter_temp], usWeekY[week_pos]/8, (char*)ucMonthDay[k], 12, 0);	
 		}
 		
-//		u8g2_DrawLine(&u8g2, 115, 0, 115, 62);
-//		u8g2_DrawStr(&u8g2, 117, 32, ucMonthDay[line_pos+1]);	
-//		u8g2_DrawHLine(&u8g2, usLineY[line_pos], 63, 11);
-//		
-//		u8g2_SendBuffer(&u8g2);
-
+		OLED_ShowString(117, 32/8, (char*)ucMonthDay[line_pos+1], 12, 0);	
+		
 		/* 读按键中断队列 */
 		xQueueReceive(g_xQueueMenu, &key_data, portMAX_DELAY);
 
@@ -171,6 +161,5 @@ void ShowCalendarTask(void *params)
 			vTaskSuspend(NULL);
 			key_data.exdata = 0;
 		}
-		//u8g2_SendBuffer(&u8g2);
 	}
 }
