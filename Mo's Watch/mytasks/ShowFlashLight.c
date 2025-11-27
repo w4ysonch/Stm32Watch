@@ -19,7 +19,7 @@ void ShowFlashLightTask(void *params)
 {
 	buzzer_init();
 	/* 创建队列 */
-	g_xQueueMenu = xQueueCreate(1, 4);
+	//g_xQueueMenu = xQueueCreate(1, 4);
 	if(NULL != g_xQueueMenu)HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
 
 	OLED_Init();

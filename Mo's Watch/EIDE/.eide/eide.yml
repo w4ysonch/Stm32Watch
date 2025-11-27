@@ -80,6 +80,8 @@ virtualFolder:
         - path: ../driver/oled.h
         - path: ../driver/oledfont.c
         - path: ../driver/oledfont.h
+        - path: ../driver/bmp280.c
+        - path: ../driver/bmp280.h
       folders: []
     - name: mytask
       files:
@@ -101,6 +103,8 @@ virtualFolder:
         - path: ../mytasks/ShowWoodenFish.h
         - path: ../mytasks/ShowDHT11.c
         - path: ../mytasks/ShowDHT11.h
+        - path: ../mytasks/ShowBMP280.c
+        - path: ../mytasks/ShowBMP280.h
       folders: []
     - name: ::CMSIS
       files: []

@@ -57,7 +57,7 @@ void ShowClockTimeTask(void *params)
 	buzzer_init();
 
 	/* 创建队列 */
-	g_xQueueMenu = xQueueCreate(1, 4);
+	//g_xQueueMenu = xQueueCreate(1, 4);
 	if(NULL != g_xQueueMenu)HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
 
 	OLED_Init();
@@ -66,6 +66,7 @@ void ShowClockTimeTask(void *params)
 	struct Key_data	key_data;	
 	while(1)
 	{
+		OLED_Clear();
 		ShowClock();		
 		
 		/* 读按键中断队列 */
@@ -109,7 +110,10 @@ void ShowClockTimeTask(void *params)
 		{
 			buzzer_buzz(2500, 100);
 			clock_flag = 0;
-			xTimerStop(g_Clock_Timer, 0);
+			if(g_Clock_Timer != NULL)
+			{
+				xTimerStop(g_Clock_Timer, 0);
+			}
 			vTaskResume(xShowMenuTaskHandle);
 			vTaskSuspend(NULL);
 		}	
@@ -120,7 +124,10 @@ void ShowClockTimeTask(void *params)
 			if(g_clock_num[0]==g_real_time[0]&&g_clock_num[1]==g_real_time[1]&&g_clock_num[2]==g_real_time[2]&&g_clock_num[3]==g_real_time[3])
 			{
 				clock_flag = 0;
-				xTimerStop(g_Clock_Timer, 0);
+				if(g_Clock_Timer != NULL)
+				{
+					xTimerStop(g_Clock_Timer, 0);
+				}
 				/* music */
 				buzzer_buzz(2500, 1000);
 			}

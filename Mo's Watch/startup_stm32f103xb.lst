@@ -473,12 +473,12 @@ ARM Macro Assembler    Page 8
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=hal_freertos_u8g2\startup_stm32f103xb.d -ohal_freertos_u8g2\startu
-p_stm32f103xb.o -I../Core/Inc -I.\RTE\_hal_freertos_u8g2 -I"C:\WaysonChan Files
-\Keil_v5\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include" -I"C:\WaysonChan Files\K
-eil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include" --predefine="__UVISIO
-N_VERSION SETA 532" --predefine="_RTE_ SETA 1" --predefine="STM32F10X_MD SETA 1
-" --predefine="_RTE_ SETA 1" --list=..\startup_stm32f103xb.lst startup_stm32f10
-3xb.s
+p_stm32f103xb.o -I../Core/Inc -I../Drivers/CMSIS/Include -I.\RTE\_hal_freertos_
+u8g2 -I"C:\WaysonChan Files\Keil_v5\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Includ
+e" -I"C:\WaysonChan Files\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Inc
+lude" --predefine="__UVISION_VERSION SETA 532" --predefine="_RTE_ SETA 1" --pre
+define="STM32F10X_MD SETA 1" --predefine="_RTE_ SETA 1" --list=..\startup_stm32
+f103xb.lst startup_stm32f103xb.s
 
 
 

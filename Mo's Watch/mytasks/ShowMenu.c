@@ -25,8 +25,9 @@ extern TaskHandle_t xShowSettingTaskHandle;
 extern TaskHandle_t xShowClockTaskHandle;
 extern TaskHandle_t xShowCalendarTaskHandle;
 extern TaskHandle_t xShowDHT11TaskHandle;
+extern TaskHandle_t xShowBMP280TaskHandle;
 
-const char str[5][10] = {"cleder", "torch", "hum", "clock", "more"};
+const char str[6][10] = {"cleder", "torch", "hum", "clock", "press", "more"};
 
 /* app's name */
 str1 fly1 = {"fly1", NULL};
@@ -41,10 +42,10 @@ Image Right = {104, 0, 23, 10};
 Image String = {53, 10, 0, 0};
 Image Rec_select = {49, 16, 32, 32};
 uint8_t dock_pos = 2;
-uint8_t dock[5] = {45, 55, 65, 75, 85};
+uint8_t dock[6] = {45, 55, 65, 75, 85, 95};
 uint8_t dock_y = 58, dock_r = 3;  
 int str_flag = 2;
-int8_t R_move_pos[5] = {-1, 9, 49, 89, 129};
+int8_t R_move_pos[6] = {-1, 9, 49, 89, 129, 169};
 BaseType_t select = 3;
 
 uint32_t end_flag = 1;
@@ -72,7 +73,7 @@ void ShowMenuTask(void *params)
 	buzzer_init();
    
 	/* create queue */
-	g_xQueueMenu = xQueueCreate(4, 4);
+	//g_xQueueMenu = xQueueCreate(4, 4);
 	if(NULL != g_xQueueMenu)HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);	
 	
 	OLED_Init();
@@ -102,7 +103,7 @@ void ShowMenuTask(void *params)
 		}
 		else if(key_data.ldata == 1)
 		{
-			if(dock_pos < 4)
+			if(dock_pos < 5)
 			{		
 				dock_pos++;
 				str_flag++;
@@ -120,7 +121,8 @@ void ShowMenuTask(void *params)
 				case 1: vTaskResume(xShowFlashLightTaskHandle);vTaskSuspend(NULL);key_data.exdata = 0;break;
 				case 2: vTaskResume(xShowDHT11TaskHandle);vTaskSuspend(NULL);key_data.exdata = 0;break;
 				case 3: vTaskResume(xShowClockTaskHandle);vTaskSuspend(NULL);key_data.exdata = 0;break;
-				case 4: vTaskResume(xShowSettingTaskHandle);vTaskSuspend(NULL);key_data.exdata = 0;break;
+				case 4: vTaskResume(xShowBMP280TaskHandle);vTaskSuspend(NULL);key_data.exdata = 0;break;
+				case 5: vTaskResume(xShowSettingTaskHandle);vTaskSuspend(NULL);key_data.exdata = 0;break;
 			}
 		}
 		else if(key_data.updata == 1)

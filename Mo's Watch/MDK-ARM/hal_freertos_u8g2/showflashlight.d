@@ -42,7 +42,7 @@ hal_freertos_u8g2\showflashlight.o: ../Middlewares/Third_Party/FreeRTOS/Source/C
 hal_freertos_u8g2\showflashlight.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 hal_freertos_u8g2\showflashlight.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 hal_freertos_u8g2\showflashlight.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
-hal_freertos_u8g2\showflashlight.o: ..\driver\beep.h
-hal_freertos_u8g2\showflashlight.o: ..\driver\oled.h
-hal_freertos_u8g2\showflashlight.o: ..\driver\oledfont.h
+hal_freertos_u8g2\showflashlight.o: ../driver/beep.h
+hal_freertos_u8g2\showflashlight.o: ../driver/oled.h
+hal_freertos_u8g2\showflashlight.o: ../driver/oledfont.h
 hal_freertos_u8g2\showflashlight.o: ..\mytasks\Data.h

@@ -24,6 +24,7 @@ extern TaskHandle_t xShowSettingTaskHandle;
 extern TaskHandle_t xShowCalendarTaskHandle;
 extern TaskHandle_t xShowClockTaskHandle;
 extern TaskHandle_t xShowDHT11TaskHandle;
+extern TaskHandle_t xShowBMP280TaskHandle;
 
 /* some data */
 #define BOX_R 1
@@ -54,9 +55,10 @@ void ShowTimeTask(void *params)
    	vTaskSuspend(xShowClockTaskHandle);
    	vTaskSuspend(xShowCalendarTaskHandle);
    	vTaskSuspend(xShowDHT11TaskHandle);
+	vTaskSuspend(xShowBMP280TaskHandle);
 
 	/* create_queue */
-	g_xQueueMenu = xQueueCreate(1, 4);
+	//g_xQueueMenu = xQueueCreate(1, 4);
 	
 	OLED_Init();
 	OLED_Clear();

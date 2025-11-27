@@ -45,7 +45,7 @@ void ShowAbout(void)
 	OLED_ShowString(about_x_pos, about_y_pos[0]/8,  "thank you", 16, 0);
 	OLED_ShowString(about_x_pos, about_y_pos[1]/8,  "following", 16, 0);
 	OLED_ShowString(about_x_pos, about_y_pos[2]/8,  "my project", 16, 0);
-	OLED_ShowString(about_x_pos, about_y_pos[3]/8,  "@moyiji", 16, 0);
+	OLED_ShowString(about_x_pos, about_y_pos[3]/8,  "@chs&mzk", 16, 0);
 }
 
 void ShowSwitch(int switch_status)
@@ -64,7 +64,7 @@ void ShowSetting_Task(void)
 {
 	buzzer_init();
 	/* 创建队列 */
-	g_xQueueMenu = xQueueCreate(4, 4);
+	//g_xQueueMenu = xQueueCreate(4, 4);
 	if(NULL != g_xQueueMenu)HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
 
 	OLED_Init();
@@ -79,7 +79,7 @@ void ShowSetting_Task(void)
 		 		
 		switch(seclect)
 		{
-			case 0: OLED_ShowString(64, 25/8,"@moyiji", 16, 0);OLED_ShowString(61, 50/8,"2021/05/27", 16, 0);break;
+			case 0: OLED_ShowString(64, 25/8,"@chs&mzk", 16, 0);OLED_ShowString(61, 50/8,"2025/11", 16, 0);break;
 			case 1: ShowSwitch(power_button);break;
 			case 2: ShowSwitch(power_button);break;
 			case 3: ShowSwitch(power_button);break;

@@ -42,9 +42,9 @@ hal_freertos_u8g2\showclock.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_
 hal_freertos_u8g2\showclock.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 hal_freertos_u8g2\showclock.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 hal_freertos_u8g2\showclock.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
-hal_freertos_u8g2\showclock.o: ..\driver\beep.h
-hal_freertos_u8g2\showclock.o: ..\driver\oled.h
-hal_freertos_u8g2\showclock.o: ..\driver\oledfont.h
+hal_freertos_u8g2\showclock.o: ../driver/beep.h
+hal_freertos_u8g2\showclock.o: ../driver/oled.h
+hal_freertos_u8g2\showclock.o: ../driver/oledfont.h
 hal_freertos_u8g2\showclock.o: ..\mytasks\Data.h
 hal_freertos_u8g2\showclock.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 hal_freertos_u8g2\showclock.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

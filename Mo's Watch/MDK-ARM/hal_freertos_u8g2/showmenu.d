@@ -44,7 +44,7 @@ hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/include
 hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 hal_freertos_u8g2\showmenu.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 hal_freertos_u8g2\showmenu.o: ../Core/Inc/gpio.h
-hal_freertos_u8g2\showmenu.o: ..\driver\beep.h
-hal_freertos_u8g2\showmenu.o: ..\driver\oled.h
-hal_freertos_u8g2\showmenu.o: ..\driver\oledfont.h
+hal_freertos_u8g2\showmenu.o: ../driver/beep.h
+hal_freertos_u8g2\showmenu.o: ../driver/oled.h
+hal_freertos_u8g2\showmenu.o: ../driver/oledfont.h
 hal_freertos_u8g2\showmenu.o: ..\mytasks\Data.h

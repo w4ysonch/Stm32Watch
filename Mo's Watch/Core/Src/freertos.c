@@ -76,6 +76,7 @@ TaskHandle_t xShowFlashLightTaskHandle = NULL;
 TaskHandle_t xShowSettingTaskHandle = NULL;
 TaskHandle_t xShowWoodenFishTaskHandle = NULL;
 TaskHandle_t xShowDHT11TaskHandle = NULL;
+TaskHandle_t xShowBMP280TaskHandle = NULL;
 TaskHandle_t xShowHRSPO2TaskHandle = NULL;
 
 QueueHandle_t g_xQueueMenu;	
@@ -99,6 +100,7 @@ const osThreadAttr_t defaultTask_attributes = {
 extern void ClockTimerCallBackFun(void);
 
 extern void ShowDHT11Task(void *params);
+extern void ShowBMP280Task(void *params);
 extern void ShowCalendarTask(void *params);
 extern void ShowFlashLightTask(void *params);
 extern void ShowWoodenFishTask(void *params);
@@ -147,19 +149,19 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
+  g_xQueueMenu = xQueueCreate(4, 4);
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
-//  xTaskCreate(RootTask, "RootTask", 128, NULL, osPriorityNormal, &xRootTaskHandle);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   
   /* create some tasks */
 	xTaskCreate(ShowTimeTask, "ShowTimeTask", 128, NULL, osPriorityNormal, &xShowTimeTaskHandle);
-	xTaskCreate(ShowMenuTask, "ShowMenuTask", 256, NULL, osPriorityNormal, &xShowMenuTaskHandle);
+	xTaskCreate(ShowMenuTask, "ShowMenuTask", 128, NULL, osPriorityNormal, &xShowMenuTaskHandle);
 
 /******** 5 apps ********/
 	/*1*/
@@ -168,10 +170,12 @@ void MX_FREERTOS_Init(void) {
   	xTaskCreate(ShowFlashLightTask, "ShowFlashLightTask", Task_default_size, NULL, osPriorityNormal, &xShowFlashLightTaskHandle);
     /*3*/
   	xTaskCreate(ShowDHT11Task, "ShowDHT11Task", Task_default_size, NULL, osPriorityNormal, &xShowDHT11TaskHandle);
-	//xTaskCreate(ShowWoodenFishTask, "ShowWoodenFishTask", Task_default_size, NULL, osPriorityNormal, &xShowWoodenFishTaskHandle);
     /*4*/
+  	xTaskCreate(ShowBMP280Task, "ShowBMP280Task", 256, NULL, osPriorityNormal, &xShowBMP280TaskHandle);
+	//xTaskCreate(ShowWoodenFishTask, "ShowWoodenFishTask", Task_default_size, NULL, osPriorityNormal, &xShowWoodenFishTaskHandle);
+    /*5*/
   	xTaskCreate(ShowClockTimeTask, "ShowClockTimeTask", Task_default_size, NULL, osPriorityNormal, &xShowClockTaskHandle);
-	/*5*/
+	/*6*/
   	xTaskCreate(ShowSetting_Task, "ShowSetting_Task", 256, NULL, osPriorityNormal, &xShowSettingTaskHandle);
 
 //	PassiveBuzzer_Test();
@@ -218,11 +222,15 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	extern BaseType_t seclect_end;
 	BaseType_t  RM_Flag, LM_Flag, EN_Flag, EX_Flag;
 	Key_data key_data;
+
+	/* Simple debounce using system tick */
+	static uint32_t last_tick = 0;
+	if (xTaskGetTickCountFromISR() - last_tick < 200) return;
+	last_tick = xTaskGetTickCountFromISR();
 		
-    if(GPIO_Pin == GPIO_PIN_11)
+    if(GPIO_Pin == GPIO_PIN_6)
 	{ 
-		for(int i = 0; i<20000; i++){}
-		if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_11) == GPIO_PIN_SET)
+		if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_6) == GPIO_PIN_SET)
 		{
 			if(end_flag == 1&&seclect_end == 0)
 			{
@@ -234,10 +242,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			}
 		}
 	}
-	if(GPIO_Pin == GPIO_PIN_10)
+	if(GPIO_Pin == GPIO_PIN_5)
 	{ 
-		for(int i = 0; i<20000; i++){}
-		if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_10) == GPIO_PIN_SET)
+		if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_5) == GPIO_PIN_SET)
 		{
 			if(end_flag == 1&&seclect_end == 0)
 			{
@@ -249,10 +256,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			}
 		}
 	}
-	if(GPIO_Pin == GPIO_PIN_1)
+	if(GPIO_Pin == GPIO_PIN_4)
 	{
-		for(int i = 0; i<20000; i++){}		
-		if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_1) == GPIO_PIN_SET)
+		if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_4) == GPIO_PIN_SET)
 		{
 			if(end_flag == 1&&seclect_end == 0)
 			{
@@ -264,10 +270,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			}
 		}
 	}
-	if(GPIO_Pin == GPIO_PIN_0)
+	if(GPIO_Pin == GPIO_PIN_3)
 	{
-		for(int i = 0; i<20000; i++){}		
-		if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == GPIO_PIN_SET)
+		if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_3) == GPIO_PIN_SET)
 		{
 			if(end_flag == 1&&seclect_end == 0)
 			{

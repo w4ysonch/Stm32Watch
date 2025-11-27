@@ -1,6 +1,8 @@
 --cpu Cortex-M3
 "hal_freertos_u8g2\startup_stm32f103xb.o"
 "hal_freertos_u8g2\stm32f1xx_hal_gpio_ex.o"
+"hal_freertos_u8g2\stm32f1xx_hal_tim.o"
+"hal_freertos_u8g2\stm32f1xx_hal_tim_ex.o"
 "hal_freertos_u8g2\stm32f1xx_hal.o"
 "hal_freertos_u8g2\stm32f1xx_hal_rcc.o"
 "hal_freertos_u8g2\stm32f1xx_hal_rcc_ex.o"
@@ -12,8 +14,6 @@
 "hal_freertos_u8g2\stm32f1xx_hal_flash_ex.o"
 "hal_freertos_u8g2\stm32f1xx_hal_exti.o"
 "hal_freertos_u8g2\stm32f1xx_hal_i2c.o"
-"hal_freertos_u8g2\stm32f1xx_hal_tim.o"
-"hal_freertos_u8g2\stm32f1xx_hal_tim_ex.o"
 "hal_freertos_u8g2\system_stm32f1xx.o"
 "hal_freertos_u8g2\main.o"
 "hal_freertos_u8g2\gpio.o"
@@ -39,6 +39,7 @@
 "hal_freertos_u8g2\beep.o"
 "hal_freertos_u8g2\oled.o"
 "hal_freertos_u8g2\oledfont.o"
+"hal_freertos_u8g2\bmp280.o"
 "hal_freertos_u8g2\showtimetask.o"
 "hal_freertos_u8g2\data.o"
 "hal_freertos_u8g2\showmenu.o"
@@ -48,6 +49,7 @@
 "hal_freertos_u8g2\showsetting.o"
 "hal_freertos_u8g2\showwoodenfish.o"
 "hal_freertos_u8g2\showdht11.o"
+"hal_freertos_u8g2\showbmp280.o"
 --strict --scatter "hal_freertos_u8g2\hal_freertos_u8g2.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

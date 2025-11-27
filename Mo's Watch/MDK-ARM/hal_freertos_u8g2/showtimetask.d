@@ -43,7 +43,7 @@ hal_freertos_u8g2\showtimetask.o: ../Middlewares/Third_Party/FreeRTOS/Source/inc
 hal_freertos_u8g2\showtimetask.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 hal_freertos_u8g2\showtimetask.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 hal_freertos_u8g2\showtimetask.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
-hal_freertos_u8g2\showtimetask.o: ..\driver\beep.h
-hal_freertos_u8g2\showtimetask.o: ..\driver\oled.h
-hal_freertos_u8g2\showtimetask.o: ..\driver\oledfont.h
+hal_freertos_u8g2\showtimetask.o: ../driver/beep.h
+hal_freertos_u8g2\showtimetask.o: ../driver/oled.h
+hal_freertos_u8g2\showtimetask.o: ../driver/oledfont.h
 hal_freertos_u8g2\showtimetask.o: ..\mytasks\Data.h

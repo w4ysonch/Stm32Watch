@@ -43,9 +43,9 @@ hal_freertos_u8g2\showdht11.o: ../Middlewares/Third_Party/FreeRTOS/Source/includ
 hal_freertos_u8g2\showdht11.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 hal_freertos_u8g2\showdht11.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 hal_freertos_u8g2\showdht11.o: C:\WaysonChan Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-hal_freertos_u8g2\showdht11.o: ..\driver\beep.h
-hal_freertos_u8g2\showdht11.o: ..\driver\driver_dht11.h
-hal_freertos_u8g2\showdht11.o: ..\driver\oled.h
-hal_freertos_u8g2\showdht11.o: ..\driver\oledfont.h
+hal_freertos_u8g2\showdht11.o: ../driver/beep.h
+hal_freertos_u8g2\showdht11.o: ../driver/driver_dht11.h
+hal_freertos_u8g2\showdht11.o: ../driver/oled.h
+hal_freertos_u8g2\showdht11.o: ../driver/oledfont.h
 hal_freertos_u8g2\showdht11.o: ..\mytasks\Data.h
 hal_freertos_u8g2\showdht11.o: ..\mytasks\ShowCalendar.h

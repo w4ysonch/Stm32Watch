@@ -40,8 +40,8 @@ hal_freertos_u8g2\data.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_
 hal_freertos_u8g2\data.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 hal_freertos_u8g2\data.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 hal_freertos_u8g2\data.o: ..\mytasks\Data.h
-hal_freertos_u8g2\data.o: ..\driver\oled.h
-hal_freertos_u8g2\data.o: ..\driver\oledfont.h
+hal_freertos_u8g2\data.o: ../driver/oled.h
+hal_freertos_u8g2\data.o: ../driver/oledfont.h
 hal_freertos_u8g2\data.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 hal_freertos_u8g2\data.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 hal_freertos_u8g2\data.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h

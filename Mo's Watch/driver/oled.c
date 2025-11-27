@@ -72,7 +72,7 @@ void OLED_On(void)
 		OLED_WR_CMD(0x00);      //设置显示位置—列低地址
 		OLED_WR_CMD(0x10);      //设置显示位置—列高地址
 		for(n=0;n<128;n++)
-			OLED_WR_DATA(1);
+			OLED_WR_DATA(0xFF);
 	}
 }
 
