@@ -54,6 +54,7 @@
 "hal_freertos_u8g2\showdht11.o"
 "hal_freertos_u8g2\showbmp280.o"
 "hal_freertos_u8g2\showsteptask.o"
+"hal_freertos_u8g2\stepcounttask.o"
 --library_type=microlib --strict --scatter "hal_freertos_u8g2\hal_freertos_u8g2.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

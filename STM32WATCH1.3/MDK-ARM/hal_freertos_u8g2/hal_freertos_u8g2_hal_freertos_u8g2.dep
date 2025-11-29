@@ -492,7 +492,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x69286CCE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x69286CCE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x69286CCE)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x69286CCE)
-F (../Core/Src/freertos.c)(0x6929AE78)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../mytasks -I ../driver -I ../max30102-I.\RTE\_hal_freertos_u8g2-I"C:\WaysonChan Files\Keil_v5\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include"-I"C:\WaysonChan Files\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="532" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o hal_freertos_u8g2\freertos.o --omf_browse hal_freertos_u8g2\freertos.crf --depend hal_freertos_u8g2\freertos.d)
+F (../Core/Src/freertos.c)(0x692B19D1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../mytasks -I ../driver -I ../max30102-I.\RTE\_hal_freertos_u8g2-I"C:\WaysonChan Files\Keil_v5\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include"-I"C:\WaysonChan Files\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="532" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o hal_freertos_u8g2\freertos.o --omf_browse hal_freertos_u8g2\freertos.crf --depend hal_freertos_u8g2\freertos.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69286CCE)
 I (C:\WaysonChan Files\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63877C)
 I (C:\WaysonChan Files\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63877C)
@@ -541,6 +541,7 @@ I (../driver/oled.h)(0x69286CCE)
 I (../driver/oledfont.h)(0x69286CCE)
 I (../mytasks/ShowTimeTask.h)(0x69286CCE)
 I (../mytasks/ShowMenu.h)(0x69286CCE)
+I (../mytasks/StepCountTask.h)(0x692B188D)
 F (../Core/Src/i2c.c)(0x69286CCE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../mytasks -I ../driver -I ../max30102-I.\RTE\_hal_freertos_u8g2-I"C:\WaysonChan Files\Keil_v5\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include"-I"C:\WaysonChan Files\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="532" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o hal_freertos_u8g2\i2c.o --omf_browse hal_freertos_u8g2\i2c.crf --depend hal_freertos_u8g2\i2c.d)
 I (../Core/Inc/i2c.h)(0x69286CCE)
 I (../Core/Inc/main.h)(0x69286CCE)
@@ -1596,7 +1597,7 @@ I (../driver/oled.h)(0x69286CCE)
 I (../driver/oledfont.h)(0x69286CCE)
 I (..\mytasks\Data.h)(0x69286CCE)
 I (../driver/beep.h)(0x69286CCE)
-F (..\mytasks\ShowStepTask.c)(0x69299517)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../mytasks -I ../driver -I ../max30102-I.\RTE\_hal_freertos_u8g2-I"C:\WaysonChan Files\Keil_v5\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include"-I"C:\WaysonChan Files\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="532" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o hal_freertos_u8g2\showsteptask.o --omf_browse hal_freertos_u8g2\showsteptask.crf --depend hal_freertos_u8g2\showsteptask.d)
+F (..\mytasks\ShowStepTask.c)(0x692B188D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../mytasks -I ../driver -I ../max30102-I.\RTE\_hal_freertos_u8g2-I"C:\WaysonChan Files\Keil_v5\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include"-I"C:\WaysonChan Files\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="532" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o hal_freertos_u8g2\showsteptask.o --omf_browse hal_freertos_u8g2\showsteptask.crf --depend hal_freertos_u8g2\showsteptask.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69286CCE)
 I (C:\WaysonChan Files\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63877C)
 I (C:\WaysonChan Files\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63877C)
@@ -1647,4 +1648,50 @@ I (..\mytasks\ShowCalendar.h)(0x69286CCE)
 I (../driver/mpu6050.h)(0x65DB53B4)
 I (../driver/inv_mpu.h)(0x65DB53B4)
 I (../driver/driver_timer.h)(0x69286CCE)
+I (C:\WaysonChan Files\Keil_v5\ARM\ARMCC\include\string.h)(0x5F63878A)
+I (..\mytasks\StepCountTask.h)(0x692B188D)
+F (..\mytasks\StepCountTask.c)(0x692B188D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../mytasks -I ../driver -I ../max30102-I.\RTE\_hal_freertos_u8g2-I"C:\WaysonChan Files\Keil_v5\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include"-I"C:\WaysonChan Files\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="532" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o hal_freertos_u8g2\stepcounttask.o --omf_browse hal_freertos_u8g2\stepcounttask.crf --depend hal_freertos_u8g2\stepcounttask.d)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69286CCE)
+I (C:\WaysonChan Files\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5F63877C)
+I (C:\WaysonChan Files\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5F63877C)
+I (../Core/Inc/FreeRTOSConfig.h)(0x6929630A)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69286CCE)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69286CCE)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69286CCE)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x69286CCE)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69286CCE)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69286CCE)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69286CCE)
+I (../Core/Inc/main.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x69286CCE)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x69286CCE)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x69286CCE)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x69286CCE)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x69286CCE)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69286CCE)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69286CCE)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69286CCE)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x69286CCE)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x69286CCE)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x69286CCE)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69286CCE)
+I (../driver/mpu6050.h)(0x65DB53B4)
+I (../driver/inv_mpu.h)(0x65DB53B4)
+I (../driver/driver_timer.h)(0x69286CCE)
+I (..\mytasks\StepCountTask.h)(0x692B188D)
 I (C:\WaysonChan Files\Keil_v5\ARM\ARMCC\include\string.h)(0x5F63878A)

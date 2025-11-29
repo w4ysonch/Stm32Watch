@@ -31,6 +31,7 @@
 #include "Data.h"
 #include "ShowTimeTask.h"
 #include "ShowMenu.h"
+#include "StepCountTask.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -65,6 +66,7 @@ TaskHandle_t xShowSettingTaskHandle = NULL;
 TaskHandle_t xShowDHT11TaskHandle = NULL;
 TaskHandle_t xShowBMP280TaskHandle = NULL;
 TaskHandle_t xShowStepTaskHandle = NULL;
+TaskHandle_t xStepCountTaskHandle = NULL;
 
 QueueHandle_t g_xQueueMenu;	
 uint16_t key1_filter = 0;
@@ -152,13 +154,13 @@ void MX_FREERTOS_Init(void) {
 
 /******** 7 apps ********/
 	/*1*/
-  	xTaskCreate(ShowCalendarTask, "ShowCalendarTask", 256, NULL, osPriorityNormal, &xShowCalendarTaskHandle);
+  	xTaskCreate(ShowCalendarTask, "ShowCalendarTask", 128, NULL, osPriorityNormal, &xShowCalendarTaskHandle);
 	/*2*/
   	xTaskCreate(ShowFlashLightTask, "ShowFlashLightTask", Task_default_size, NULL, osPriorityNormal, &xShowFlashLightTaskHandle);
     /*3*/
   	xTaskCreate(ShowDHT11Task, "ShowDHT11Task", Task_default_size, NULL, osPriorityNormal, &xShowDHT11TaskHandle);
     /*4*/
-  	xTaskCreate(ShowBMP280Task, "ShowBMP280Task", 256, NULL, osPriorityNormal, &xShowBMP280TaskHandle);
+  	xTaskCreate(ShowBMP280Task, "ShowBMP280Task", 128, NULL, osPriorityNormal, &xShowBMP280TaskHandle);
     /*5*/
   	xTaskCreate(ShowClockTimeTask, "ShowClockTimeTask", Task_default_size, NULL, osPriorityNormal, &xShowClockTaskHandle);
 	/*6*/
@@ -167,6 +169,10 @@ void MX_FREERTOS_Init(void) {
 			   xShowStepTaskHandle = NULL;
 			   buzzer_buzz(4000, 400); // 创建失败蜂鸣提示
 		   }
+	if (xTaskCreate(StepCountTask, "StepCountTask", 128, NULL, osPriorityNormal, &xStepCountTaskHandle) != pdPASS) {
+		xStepCountTaskHandle = NULL;
+		buzzer_buzz(4000, 400); // 创建失败蜂鸣提示
+	}
 //	PassiveBuzzer_Test();
   /* USER CODE END RTOS_THREADS */
 

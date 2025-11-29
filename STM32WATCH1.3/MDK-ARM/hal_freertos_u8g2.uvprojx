@@ -784,6 +784,11 @@
               <FileType>1</FileType>
               <FilePath>..\mytasks\ShowStepTask.c</FilePath>
             </File>
+            <File>
+              <FileName>StepCountTask.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\mytasks\StepCountTask.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
