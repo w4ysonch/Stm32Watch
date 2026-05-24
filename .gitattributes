@@ -1,0 +1,27 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# C source files
+*.c text eol=lf
+*.h text eol=lf
+*.s text eol=lf
+
+# Project files
+*.uvprojx text eol=crlf
+*.uvoptx text eol=crlf
+*.ioc text eol=crlf
+
+# Scripts
+*.bat text eol=crlf
+
+# Documentation
+*.md text
+*.txt text
+
+# Binary files
+*.axf binary
+*.bin binary
+*.hex binary
+*.elf binary
+*.o binary
+*.d binary

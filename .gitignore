@@ -1,0 +1,75 @@
+# ============================================
+# Keil MDK-ARM
+# ============================================
+# Build outputs
+*.o
+*.d
+*.crf
+*.axf
+*.hex
+*.bin
+*.elf
+*.lst
+*.map
+*.iex
+*.htm
+*.dep
+*.fedb
+*.dpsc
+*.dpct
+*.build_log.htm
+JLinkLog.txt
+JLinkSettings.ini
+
+# User-specific editor configurations
+*.uvguix.*
+*.uvguix.*
+
+# EventRecorder generated
+*.scvd
+
+# ============================================
+# STM32CubeMX
+# ============================================
+# Contains local absolute paths, regenerated from .ioc
+.mxproject
+
+# ============================================
+# EIDE
+# ============================================
+# Build outputs
+build/
+bin/
+obj/
+out/
+
+# EIDE local state
+.eide/log/
+.eide.usr.ctx.json
+
+# Cached CMSIS packs (auto-downloaded by EIDE)
+.cmsis/
+
+# ============================================
+# Editor / IDE
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================
+# OS generated
+# ============================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ============================================
+# Misc
+# ============================================
+# Temporary office files
+~$*.docx
+~$*.pdf
+~$*.xlsx
