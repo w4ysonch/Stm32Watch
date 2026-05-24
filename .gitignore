@@ -23,6 +23,10 @@ JLinkSettings.ini
 
 # User-specific editor configurations
 *.uvguix.*
+*.uvoptx
+
+# Keil RTE auto-generated (regenerated on build)
+RTE/
 *.uvguix.*
 
 # EventRecorder generated
